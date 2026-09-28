@@ -29,8 +29,8 @@ The competition had three challenges: a time trial over bumps and around walls, 
 | Motor driver | L298N dual H bridge |
 | Drive | 6 TT gear motors (3 to 6 V), 3 per side |
 | Suspension | Rocker bogie |
-| Arm | 3 servos |
-| Gripper | 1 servo |
+| Arm | 3 MG996r servos |
+| Gripper | 1 MG90s servo |
 | Power | 7.4 V 5200 mAh 2S LiPo |
 | Structure | 3D printed in PLA |
 
