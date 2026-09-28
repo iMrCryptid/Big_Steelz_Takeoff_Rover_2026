@@ -3,7 +3,7 @@
 <!-- Add a photo of the finished rover to Media/Photos, then uncomment the line below and match the file name -->
 <!-- ![Big Steelz rover](Media/Photos/rover.jpg) -->
 
-A six wheel, remote controlled rover with rocker bogie suspension and a four servo arm and gripper. It was designed, 3D printed, wired, and programmed by a team of five for the **TMU Takeoff Rover Building Competition** (February to May 2026), where it took **🥇 first place in the Guess the Word challenge**. It is driven from a phone over WiFi.
+A six wheel, remote controlled rover with rocker bogie suspension and a four servo arm and gripper. It was designed, 3D printed, wired, and programmed by a team of five for the **TMU Takeoff Rover Building Competition** (February to May 2026), where it took ** first place in the Guess the Word challenge**. It is driven from a phone over WiFi.
 
 This repo documents how the rover was built: the CAD, the electronics, the code, and what we learned along the way.
 
