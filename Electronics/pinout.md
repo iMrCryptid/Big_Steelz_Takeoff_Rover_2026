@@ -29,9 +29,9 @@ The right motor follows the same pattern with IN3, IN4, and ENB.
 
 | Servo | ESP32 GPIO | Function | Start position | Allowed range |
 |---|---|---|---|---|
-| S1 | 19 | Arm joint 1 (TODO: name, e.g. base) | 180° | 0° to 180° |
-| S2 | 21 | Arm joint 2 (TODO: name, e.g. shoulder) | 90° | 0° to 180° |
-| S3 | 22 | Arm joint 3 (TODO: name, e.g. elbow) | 90° | 0° to 180° |
+| S1 | 19 | Arm joint 1 | 180° | 0° to 180° |
+| S2 | 21 | Arm joint 2 | 90° | 0° to 180° |
+| S3 | 22 | Arm joint 3 | 90° | 0° to 180° |
 | S4 | 23 | Claw | 45° | 10° (closed) to 90° (open) |
 
 All servos use a 500 to 2400 μs pulse range. Each button press moves a servo 2°.

@@ -1,25 +1,25 @@
 # Big Steelz Takeoff Rover 2026
 
-<!-- TODO: add your best photo of the finished rover to Media/Photos and uncomment the line below -->
+<!-- Add a photo of the finished rover to Media/Photos, then uncomment the line below and match the file name -->
 <!-- ![Big Steelz rover](Media/Photos/rover.jpg) -->
 
-A remote controlled rover with rocker bogie suspension and a four servo arm and gripper, built for the **TMU Takeoff Rover Building Competition** (February to May 2026). Driven from a phone over WiFi.
+A six wheel, remote controlled rover with rocker bogie suspension and a four servo arm and gripper. It was designed, 3D printed, wired, and programmed by a team of five for the **TMU Takeoff Rover Building Competition** (February to May 2026), where it took **🥇 first place in the Guess the Word challenge**. It is driven from a phone over WiFi.
 
-**Result: 🥇 First place in the Guess the Word challenge.**
+This repo documents how the rover was built: the CAD, the electronics, the code, and what we learned along the way.
 
-<!-- TODO: add a demo video link here, e.g. [Watch it run](https://youtube.com/...) -->
+<!-- Add a demo video here, e.g. [Watch it run](https://youtube.com/...) -->
 
-## Challenges
+## Design overview
 
-**1. Time trial.** Drive an obstacle course with bumps and walls to the finish line as fast as possible.
-<!-- TODO: how it went -->
+The competition had three challenges: a time trial over bumps and around walls, a block sorting match where blocks are placed on a three level shelf, and a word guessing game using a laser pointer mounted on the rover. The rover needed to handle all three, so it was built around four subsystems.
 
-**2. Block sorting.** A head to head match. Pick up blocks from the centre and place them on a three level shelf in a set colour sequence. Blocks score 1, 2, or 3 points depending on shelf height.
-<!-- TODO: how it went, and how the arm and gripper performed -->
+**Suspension.** A rocker bogie layout, the same design used on Mars rovers. Each side has a rocker and a bogie carrying three wheels, which pivot so all six wheels stay in contact with the ground over uneven terrain, without any springs.
 
-**3. Guess the Word (🥇 first place).** A laser pointer is mounted on the rover. One teammate knows an engineering term and drives the rover to point at letters one by one; another teammate writes guesses on a whiteboard, and can only guess after the third letter.
+**Body.** Houses the ESP32, motor driver, and battery, with a removable lid for access and a mount for the arm.
 
-We mounted the laser on the arm rather than the chassis. The arm servos move in small 2° steps per button press, which turned out to be ideal for aiming: the pilot could make fine adjustments to hit individual letters instead of steering the whole rover onto a target.
+**Arm.** Three servo joints carrying the gripper. It was also where we mounted the laser pointer for Guess the Word: the servos move in small 2° steps per button press, which let the pilot make fine adjustments to point at individual letters instead of steering the whole rover onto a target.
+
+**Gripper.** A servo driven pincher used to pick up and place blocks.
 
 ## Hardware
 
@@ -34,11 +34,6 @@ We mounted the laser on the arm rather than the chassis. The arm servos move in 
 | Power | 7.4 V 5200 mAh 2S LiPo |
 | Structure | 3D printed in PLA |
 
-<!-- TODO: name the arm joints (e.g. base, shoulder, elbow) in the Arm row -->
-
-**Suspension:** a rocker bogie design, the same layout used on Mars rovers. Each side has a rocker and a bogie carrying three wheels, which pivot so all six wheels stay on the ground over uneven terrain, with no springs needed.
-<!-- TODO: say whether the two sides are linked by a differential bar, and how it handled the time trial bumps -->
-
 ## Control
 
 The ESP32 runs its own WiFi access point. Connect a phone to it and open `192.168.4.1` to load the control page.
@@ -47,6 +42,8 @@ The ESP32 runs its own WiFi access point. Connect a phone to it and open `192.16
 * **Arm mode:** arm servos active; drive motors stopped and locked
 * **Claw:** open and close in either mode
 * **Stop:** cuts both drive motors immediately
+
+Splitting control into two modes keeps the pilot from accidentally driving while positioning the arm, which matters when placing blocks or aiming the laser.
 
 ## Repository layout
 
@@ -67,11 +64,13 @@ GitHub shows a 3D preview of any STL file in the browser, so you can inspect par
 
 ![Wiring diagram](<Electronics/Wiring Diagram.png>)
 
-Wire colours on the motor leads show orientation only; the L298N reverses polarity on its outputs to change direction. Every pin assignment is listed in [`Electronics/pinout.md`](Electronics/pinout.md).
+The battery feeds the L298N, which drives three motors per side. The L298N's onboard 5 V regulator powers the ESP32 and all four servos, and every ground is tied together. Every pin assignment is listed in [`Electronics/pinout.md`](Electronics/pinout.md).
+
+Wire colours on the motor leads show orientation only; the L298N reverses polarity on its outputs to change direction.
 
 ## Building it
 
-* All parts are printed in PLA. <!-- TODO: printer, layer height, infill -->
+* All parts are printed in PLA.
 * Print the **cap** parts in each subsystem folder. They secure joints where the original tolerances came out loose, and the parts will not hold together without them.
 * Set your own network name and password at the top of `Code/main.ino` before uploading.
 * Upload with the Arduino IDE using the ESP32 board package and the `ESP32Servo` library.
