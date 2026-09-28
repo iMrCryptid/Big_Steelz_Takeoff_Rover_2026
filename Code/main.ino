@@ -3,8 +3,8 @@
 #include <ESP32Servo.h>
 
 // ================= WIFI =================
-const char* ssid = "ChickenNugget";
-const char* password = "evianwater";
+const char* ssid = "WIFI_NAME";
+const char* password = "WIFI_PASSWORD";
 
 WebServer server(80);
 
