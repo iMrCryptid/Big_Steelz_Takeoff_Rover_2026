@@ -79,11 +79,11 @@ Wire colours on the motor leads show orientation only; the L298N reverses polari
 
 | Member | Contributions |
 |---|---|
-| **Jeffrey Acquah** (team lead) | Designed and finalized the gripper and suspension; finalized the arm; designed all tolerance caps and reprinted parts as needed; responsible for wiring the full rover; cowrote the code and led troubleshooting across the full program; guesser in Guess the Word |
+| **Jeffrey Acquah** (team lead) | Designed and finalized the gripper and suspension; finalized the arm; designed all tolerance caps and reprinted parts as needed; responsible for wiring the full rover; led troubleshooting across the full program code; guesser in Guess the Word |
 | **Kiara** | Programmed the drivetrain; drew diagrams for the preliminary round; helped assemble, wire, and troubleshoot |
 | **Josiah** | Designed arm segments and the gripper mount; helped finalize the body mount; built an enclosure for an ultrasonic sensor; helped assemble; main pilot |
 | **Pravani** | CAD drawings and most of the research for the preliminary round; coded the controller UI and WiFi connection; helped assemble |
-| **Eric** | Designed the body and lid; programmed the arm; helped assemble; copilot, and pilot after Josiah left |
+| **Eric** | Designed the body and lid; programmed the arm; helped assemble; copilot, and pilot after Josiah left; pilot in Guess the Word|
 
 ## What I'd change
 
