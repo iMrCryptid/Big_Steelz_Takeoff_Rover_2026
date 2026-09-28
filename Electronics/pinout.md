@@ -1,7 +1,7 @@
 # Pinout
 
-Microcontroller: ESP32 (DevKit style board)
-Motor driver: dual H bridge (L298N style, IN1 to IN4 plus ENA and ENB)
+Microcontroller: ESP32 DevKit V1 (WROOM 32)
+Motor driver: L298N dual H bridge
 Servos: 4 total, 3 for the arm and 1 for the claw
 
 ## Drive motors
@@ -38,15 +38,12 @@ All servos use a 500 to 2400 Î¼s pulse range. Each button press moves a servo 2Â
 
 ## Power
 
-TODO: fill in from the actual build.
-
 | Supply | Voltage | Powers |
 |---|---|---|
-| Battery | ? V | Motor driver motor input |
-| ? | 5 V | Servos |
-| ? | 5 V or USB | ESP32 |
+| 2S LiPo battery | 7.4 V | L298N motor input (12V terminal), which drives all 6 motors |
+| L298N onboard regulator (5V terminal) | 5 V | ESP32 (V5 pin) and all 4 servos |
 
-All grounds (battery, motor driver, servo supply, ESP32) must be connected together.
+All grounds (battery, L298N, ESP32, servos) must be tied together, or the motor signals from the ESP32 have no reference.
 
 ## Control
 
