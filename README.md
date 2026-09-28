@@ -85,7 +85,7 @@ Wire colours on the motor leads show orientation only; the L298N reverses polari
 | **Pravani** | CAD drawings and most of the research for the preliminary round; coded the controller UI and WiFi connection; helped assemble |
 | **Eric** | Designed the body and lid; programmed the arm; helped assemble; copilot, and pilot after Josiah left; pilot in Guess the Word|
 
-## What I'd change
+## What We'd change
 
 * **Tolerances.** Many printed joints came out too loose, so I designed caps to secure them. Next time I'd print small test pieces first to dial in clearances before printing full parts.
 * **Servo power.** The L298N's onboard 5 V regulator powers the ESP32 and all four servos. Servo current spikes can brown out the ESP32. A separate 5 V buck converter for the servos would fix this.
